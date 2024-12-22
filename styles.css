@@ -1,0 +1,181 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #2c3e50, #34495e); /* Darker gradient background */
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+/* Universal reset for padding and margins */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Main container styling */
+main {
+    width: 100%;
+    max-width: 400px;
+    min-height: 400px;
+    background-color: #2d3436; /* Dark gray background */
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+    padding: 40px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Form Styling */
+main form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+main form input,
+main form button {
+    padding: 15px 20px;
+    border: 2px solid #3498db; /* Subtle blue for input/border */
+    border-radius: 50px;
+    background-color: #34495e; /* Dark blue-gray background */
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #ecf0f1; /* Light text color for better contrast */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+main form input:focus,
+main form button:hover {
+    border-color: #2980b9; /* Lighter blue on focus/hover */
+    background-color: #2980b9; /* Blue accent on hover */
+    color: #fff; /* White text on hover */
+}
+
+main form button {
+    cursor: pointer;
+}
+
+/* Result Section Styling */
+main .result {
+    padding-top: 20px;
+}
+
+main .result .name {
+    font-weight: 700;
+    font-size: 2em;
+    color: #ecf0f1; /* Light color for city name */
+    margin-bottom: 10px;
+}
+
+/* Temperature and Icon Section */
+main .temperature img {
+    width: 150px;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4)); /* Stronger shadow for icon */
+    margin-bottom: 15px;
+}
+
+main .temperature figcaption {
+    font-size: 4em;
+    font-weight: 700;
+    color: #3498db; /* Blue color for temperature */
+}
+
+/* Description Text Styling */
+main .description {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #bdc3c7; /* Soft gray for description */
+    margin-bottom: 30px;
+}
+
+/* Styling for weather details (clouds, humidity, pressure) */
+main ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+main li {
+    background-color: #2980b9; /* Blue background for details */
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.4) 40%); /* Subtle gradient */
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+main li:hover {
+    background-color: #1abc9c; /* Turquoise hover effect */
+    transform: translateY(-5px);
+}
+
+main li:nth-child(2) {
+    background-color: #9b59b6; /* Purple for the second item */
+}
+
+main li:nth-child(3) {
+    background-color: #34495e; /* Darker gray for the third item */
+}
+
+main li i {
+    font-size: 2.5em;
+    margin: 15px 0;
+}
+
+/* Error Effect */
+main.error {
+    animation: errorEffect 0.3s linear 1;
+}
+
+@keyframes errorEffect {
+    0% {
+        transform: translate(10px, 5px);
+    }
+    25% {
+        transform: translate(-5px, 0);
+    }
+    50% {
+        transform: translate(8px, 2px);
+    }
+    75% {
+        transform: translate(-2px, 5px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Additional Touches for Responsiveness */
+@media screen and (max-width: 600px) {
+    main {
+        width: 90%;
+        padding: 20px;
+    }
+
+    main .temperature img {
+        width: 100px;
+    }
+
+    main .temperature figcaption {
+        font-size: 2.5em;
+    }
+
+    main .result .name {
+        font-size: 1.5em;
+    }
+
+    main ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
