@@ -1,1 +1,1 @@
-this is a responsive weather app   
+This is a responsive Weather app   
